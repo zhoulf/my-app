@@ -1,8 +1,10 @@
 /* tslint:disable:member-ordering */
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, OnChanges,
+  SimpleChanges } from '@angular/core';
 
 @Directive({
-  selector: '[appHighlight]'
+  selector: '[appHighlight]',
+  // template: '<input [(ngModel)]="hero">'
 })
 export class HighlightDirective {
 
@@ -11,7 +13,7 @@ export class HighlightDirective {
   }
 
   @Input() defaultColor: string;
-
+  // @Input() border: string;
   @Input('appHighlight') highlightColor: string;
 
   @HostListener('mouseenter') onMouseEnter() {
@@ -33,5 +35,14 @@ export class HighlightDirective {
   ngOnDestroy() { 
     console.log('destroy'); 
     this.el.nativeElement.style.border = '2px solid red' 
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    for (let propName in changes) {
+      let chng = changes[propName];
+      let cur  = JSON.stringify(chng.currentValue);
+      let prev = JSON.stringify(chng.previousValue);
+      console.log(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
+    }
   }
 }
