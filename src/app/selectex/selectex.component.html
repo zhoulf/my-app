@@ -1,0 +1,11 @@
+<div>
+  <ul>
+    <li *ngFor="let d of data">
+      <span class="badge">{{d.text}}</span> {{d.value}}
+    </li>
+  </ul>  
+
+  <select name="" id="">
+    <option *ngFor="let d of data" [value]="d.value">{{d.text}}</option>
+  </select>
+</div>

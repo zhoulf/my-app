@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+  
+  color: string;
+
+  selectData = [{
+    text: 'A',
+    value: 'a'
+  }, {
+    text: 'B',
+    value: 'b'
+  }, {
+    text: 'C',
+    value: 'c'
+  }];
 }
