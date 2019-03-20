@@ -10,14 +10,16 @@ export class AppComponent {
   
   color: string;
 
-  selectData = [{
-    text: 'A',
-    value: 'a'
-  }, {
-    text: 'B',
-    value: 'b'
-  }, {
-    text: 'C',
-    value: 'c'
-  }];
+  selectData = [
+    { text: 'A', value: 'a' },
+    { text: 'B', value: 'b' }, 
+    { text: 'C', value: 'c' }
+  ];
+
+  public selected = { text: 'C', value: 'c' };
+
+  onSelect(item: any) {
+    console.log(item);
+    // this.selected = item;
+  }
 }

@@ -29,7 +29,7 @@ export class HighlightDirective {
   }
 
   ngOnInit() { 
-    console.log(this.el); 
+    // console.log(this.el); 
   }
 
   ngOnDestroy() { 
@@ -42,7 +42,7 @@ export class HighlightDirective {
       let chng = changes[propName];
       let cur  = JSON.stringify(chng.currentValue);
       let prev = JSON.stringify(chng.previousValue);
-      console.log(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
+      // console.log(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
     }
   }
 }

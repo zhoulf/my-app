@@ -2,24 +2,21 @@ import {
   Directive, 
   ElementRef, 
   HostListener, 
-  OnInit,
   Input, 
   Output,
   OnChanges,
   SimpleChanges,
-  EventEmitter,
-  Component
+  EventEmitter
 } from '@angular/core';
 
+import { Item } from '../selectex/item';
 import { Select } from '../controls/select';
-import { Item } from './item';
 
-@Component({
-  selector: 'app-selectex',
-  templateUrl: './selectex.component.html',
-  styleUrls: ['./selectex.component.css']
+
+@Directive({
+  selector: '[appSelectex]'
 })
-export class SelectexComponent implements OnInit {
+export class SelectexDirective {
   private plugin:Select;
   
   @Input() data: Item[];
@@ -59,5 +56,4 @@ export class SelectexComponent implements OnInit {
       // console.log(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
     }
   }
-
 }

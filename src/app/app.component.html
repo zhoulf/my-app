@@ -1,5 +1,4 @@
 
-<app-selectex [data]="selectData"></app-selectex>
 
 <h4>Pick a highlight color</h4>
 <div>
@@ -10,3 +9,17 @@
 </div>
 <p [appHighlight]="color">Highlight me!</p>
 
+
+{{selectex.selected | json}}
+<app-selectex 
+[data]="selectData"
+(onSelect)="onSelect($event)" 
+#selectex></app-selectex>
+
+<!-- {{selected.value}} -->
+<!-- <select 
+  appSelectex 
+  [data]="selectData" 
+  (onSelect)="onSelect($event)" 
+  [(ngModel)]="selected.value">
+</select> -->
