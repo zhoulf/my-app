@@ -20,6 +20,6 @@ export class AppComponent {
 
   onSelect(item: any) {
     console.log(item);
-    // this.selected = item;
+    this.selected = item;
   }
 }

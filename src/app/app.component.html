@@ -1,25 +1,29 @@
-
-
-<h4>Pick a highlight color</h4>
 <div>
-  <input type="radio" name="colors" (click)="color='lightgreen'">Green
-  <input type="radio" name="colors" (click)="color='yellow'">Yellow
-  <input type="radio" name="colors" (click)="color='cyan'">Cyan
-  <!-- <input type="radio" name="colors" (click)="px='2'">Cyan -->
+  组件方式
+  <p>双向绑定值：
+    {{selectex.selected | json}}
+    {{selected | json}}
+    {{title}}
+  </p>
+  
+  <app-selectex 
+    [data]="selectData"
+    (onSelect)="onSelect($event)" 
+    [(title)]="selected.text"
+    [title]="name" (titleChange)="name=$event"
+    #selectex>
+  </app-selectex>
+
 </div>
-<p [appHighlight]="color">Highlight me!</p>
 
+<div>
+  指令方式
+  <p>{{selected | json}}</p>
+  <select 
+    appSelectex 
+    [data]="selectData" 
+    (onSelect)="onSelect($event)" 
+    [(ngModel)]="selected.value">
+  </select>
 
-{{selectex.selected | json}}
-<app-selectex 
-[data]="selectData"
-(onSelect)="onSelect($event)" 
-#selectex></app-selectex>
-
-<!-- {{selected.value}} -->
-<!-- <select 
-  appSelectex 
-  [data]="selectData" 
-  (onSelect)="onSelect($event)" 
-  [(ngModel)]="selected.value">
-</select> -->
+</div>

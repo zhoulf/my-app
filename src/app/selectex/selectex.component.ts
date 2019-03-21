@@ -32,7 +32,6 @@ export class SelectexComponent implements OnInit {
 
 
   ngOnInit() { 
-    // this.el.nativeElement.style.display = 'none';
     
     let options = {
       data: this.data,

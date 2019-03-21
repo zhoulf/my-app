@@ -6,14 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SelectexComponent } from './selectex/selectex.component';
 
-import { HighlightDirective } from './directive/highlight.directive';
 import { SelectexDirective } from './directive/selectex.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SelectexComponent,
-    HighlightDirective,
     SelectexDirective
   ],
   imports: [
