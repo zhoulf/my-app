@@ -13,11 +13,9 @@ export class Select {
         this.bindEvent();
     }
 
-    private bindEvent() {
-        let parentEle = this.srcEle.parentElement;
-        
-        
-        this.options.data.forEach(d => {
+    private updateMenu(data) {
+        Array.from(this.menu.querySelectorAll('li')).forEach(li => li.remove());
+        data.forEach(d => {
             let li = document.createElement('li');
             li.onclick = (e) => {
                 this.options.onSelect(d);
@@ -26,11 +24,20 @@ export class Select {
             li.innerText = d.value;
             this.menu.appendChild(li);
         });
+    }
 
+    private bindEvent() {
+        let parentEle = this.srcEle.parentElement;
+        
+        this.updateMenu(this.options.data);
         parentEle.appendChild(this.input);
         parentEle.appendChild(this.menu);
 
         this.srcEle.style.display = 'none';
+    }
+
+    public setData(data) {
+        this.updateMenu(data);
     }
     
     getValue() {

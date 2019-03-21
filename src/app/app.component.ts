@@ -19,7 +19,15 @@ export class AppComponent {
   public selected = { text: 'C', value: 'c' };
 
   onSelect(item: any) {
-    console.log(item);
+    // console.log(item);
     this.selected = item;
+  }
+
+  changeData() {
+    this.selectData = [
+      { text: 'D', value: 'd'},
+      { text: 'E', value: 'e'},
+      { text: 'F', value: 'f'},
+    ];
   }
 }

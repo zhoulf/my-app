@@ -54,6 +54,9 @@ export class SelectexDirective {
       let cur  = JSON.stringify(chng.currentValue);
       let prev = JSON.stringify(chng.previousValue);
       // console.log(`${propName}: currentValue = ${cur}, previousValue = ${prev}`);
+      if (propName == 'data' && this.plugin) {
+        this.plugin.setData(chng.currentValue);
+      }
     }
   }
 }
